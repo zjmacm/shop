@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.middle {
+	height: 1175px;
+}
+
+.content .center-content .latest {
+	height: 370px;
+	width: 100%;
+}
+
+.content .center-content .recommend {
+	height: 755px;
+	width: 100%;
+	border-right: solid 2px #2D2D2D;
+}
+
+.tag {
+	height: 55px;
+	width: 100%;
+	line-height: 55px;
+	background-color: #F6F6F6;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: #2D2D2D;
+}
+
+.tag p {
+	font-size: 23px;
+}
+
+#imagearea1, #imagearea2 {
+	width: 100%;
+	background-color: #F6F6F6;
+	border-style: solid;
+	border-width: 0 2px 0 0;
+	border-color: #313131;
+}
+
+#imagearea1 {
+	height: 315px;
+}
+
+#imagearea2 {
+	height: 748px;
+}
+

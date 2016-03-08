@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.middle {
+	margin: 0 auto;
+	/*height: 1175px;*//*.middle的height在具体的页面里写*/
+	width: 1150px;
+	background-color: #F6F6F6;
+	z-index: 1;
+}
+
+.middle > div {
+	position: relative;
+	vertical-align: text-top;
+	display: inline-block;
+}
+
+.middle .content {
+	left: 0;
+	width: 950px;
+	/*height: 1145px;*//*.content的height在具体的页面里写*/
+	background-color: #F6F6F6;
+}
+
+.content > div {
+	display: inline-block;
+	position: relative;
+}
+
+.content .center-content {
+	left: 25px;
+	width: 740px;
+	background-color: #F6F6F6;
+}
+

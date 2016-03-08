@@ -1,0 +1,1 @@
+homepage的js文件全部移动到了public文件夹里

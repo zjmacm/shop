@@ -1,0 +1,13 @@
+#忽略满足以下规则的文件改动
+.idea/*
+*.class
+*.iml
+*/*.iml
+~*
+*/target/*
+*.log*
+*.txt*
+*/target/classes/*
+#lucene 产生的索引
+shop-web/index/
+*/uploads/*

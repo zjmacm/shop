@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sea-register</title>
+</head>
+<body>
+<!--<p><div id="calculate" style="color:red; position:relative;display:block; " >显示</div></p>-->
+<p><div id="register" style="color:red; position:relative; display:block;" >注册</div></p>
+<div id="bg">
+<img id='closeBg' src='../images/register/20080528160825246.png' />
+</div>
+<div id="coverBox">
+
+
+<div id="body">
+	<div id="bodyHead" >
+	<img class="clipImg" src="../images/register/register.png"   />	
+	</div>
+	<div id="bodyBottom">
+	<form id="registerForm" onsubmit='registerUser();return false;'>
+		<div class="emptyInput"></div>
+		<input id="username " name="username"  class="inputBox required" type="text" placeholder="用户名" autocomplete=off  />
+		<div class="emptyInput state1"></div>
+		<input id="emailAddress" name="emailAddress" class="inputBox required" type="text" placeholder="邮箱" autocomplete=off />
+		<div class="emptyInput state1"></div>
+		<input id="password" name="password" class="inputBox required" type="password " placeholder="密码" autocomplete=off />
+		<div class="emptyInput state1"></div>
+		<input id="repassword" name="repassword" class="inputBox required" type="repassword " placeholder="确认密码" autocomplete=off />
+		<div class="emptyInput state1"></div>
+		<div class="emptyButton "></div>
+		<input type="button" value="注册" class="clickBox" />
+		<div class="emptyInputSmall"></div>
+		<p><a class="clickButton" href="#">登录</a></p>
+	</form>
+
+	</div>
+</div>
+
+
+
+</div>
+<script src="../js/tool/sea.js"></script>
+<script>
+  seajs.config({
+    base: "../",
+    alias: {
+      "jquery": "js/tool/jquery-1.11.0.js"
+    }
+  });
+
+    seajs.use("../js/register&login/main");
+</script>
+</body>
+</html>

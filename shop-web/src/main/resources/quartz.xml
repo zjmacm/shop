@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+
+                         ">
+
+    <!--<context:component-scan base-package="com.shop.quartz"/>
+
+    &lt;!&ndash; 配置调度程序quartz &ndash;&gt;
+    &lt;!&ndash; 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法&ndash;&gt;
+    &lt;!&ndash; 定义目标bean和bean中的方法 &ndash;&gt;
+    <bean id="springQtzJob" class="com.shop.quartz.QuartzJob"/>
+    <bean id="springQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="springQtzJob"/>
+        </property>
+        <property name="targetMethod">  &lt;!&ndash; 要执行的方法名称 &ndash;&gt;
+            <value>execute</value>
+        </property>
+    </bean>
+
+    &lt;!&ndash; ======================== 调度触发器 ======================== &ndash;&gt;
+    <bean id="cronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="springQtzJobMethod"></property>
+        <property name="cronExpression" value="0 */1 * * * ?"/>&lt;!&ndash;每一个小时触发&ndash;&gt;
+    </bean>
+
+
+
+    &lt;!&ndash; ======================== 调度工厂 ======================== &ndash;&gt;
+    <bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cronTriggerBean"/>
+            </list>
+        </property>
+    </bean>
+-->
+</beans>

@@ -1,0 +1,30 @@
+/* Login form */
+.form-login-icon-title {
+    background-image: url("/images/seller/locked.png")
+}
+
+.form-login-header {
+    background: transparent url("/images/seller/lock.png") no-repeat 97% 50%;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 45px 10px 10px;
+}
+
+.form-login-header .error {
+    color: red;
+}
+
+.form-login-icon-login {
+    background-image: url("/images/seller/login.png")
+}
+
+.form-login-icon-cancel {
+    background-image: url("/images/seller/close.png")
+}
+
+.form-login-warning {
+    background: url("/images/seller/warning.png") no-repeat center left;
+    padding: 2px;
+    padding-left: 20px;
+    font-weight: bold;
+}

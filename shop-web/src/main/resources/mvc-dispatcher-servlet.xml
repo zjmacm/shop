@@ -1,0 +1,94 @@
+        <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:annotation-driven/>
+	<context:component-scan base-package="com.shop.controller" />
+    <!--&lt;!&ndash;多种视图混合-->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html"/>
+                <entry key="json" value="application/json"/>
+            </map>
+        </property>
+        <property name="viewResolvers">
+            <list>
+                <bean id="velocityViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+                    <property name="prefix" value="/WEB-INF/velocity/"/>
+                    <property name="suffix" value=".vm"/>
+                    <property name="contentType" value="text/html;charset=utf-8"/>
+                    <property name="cache" value="true"/>
+                </bean>
+                <!--先某些功能先写些jsp文件测试，等完全学会velocity之后...-->
+                <bean id="jspViewResovler"
+                        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="prefix">
+                        <value>/WEB-INF/test/</value>
+                    </property>
+                    <property name="suffix">
+                        <value>.jsp</value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+            </list>
+        </property>
+    </bean>
+
+
+
+    <!-- velocity -->
+    <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/WEB-INF/view/velocity"/>
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">utf-8</prop>
+                <prop key="output.encoding">utf-8</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!--文件上传处理-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8" />
+        <property name="maxUploadSize" value="10485760000" />
+        <property name="maxInMemorySize" value="40960" />
+    </bean>
+<!--
+    当超出上传文件限制时，在进controller之前，会直接抛出org.springframework.web.multipart.MaxUploadSizeExceededException异常，可以配置一个异常拦截器来专门处理这个异常：
+-->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/error_fileupload.jsp页面 -->
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error_fileupload</prop>
+            </props>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/js/**" location="/WEB-INF/static_resources/js/**" />
+    <mvc:resources mapping="/css/**" location="/WEB-INF/static_resources/css/**" />
+    <mvc:resources mapping="/fonts/**" location="/WEB-INF/static_resources/fonts/**" />
+    <mvc:resources mapping="/plugins/**" location="/WEB-INF/static_resources/plugins/**" />
+    <mvc:resources mapping="/images/**" location="/WEB-INF/static_resources/images/**" />
+    <mvc:resources mapping="/fonts/**" location="/WEB-INF/static_resources/fonts/**" />
+    <mvc:resources mapping="/seller/data/**" location="/WEB-INF/seller/app/data/**" />
+    <mvc:resources mapping="/test/**" location="/WEB-INF/test/**"/>
+    <mvc:resources mapping="/seller/**" location="/WEB-INF/seller/**" />
+
+    <!-- 当上面要访问的静态资源不包括在上面的配置中时，则根据此配置来访问 -->
+    <mvc:default-servlet-handler/>
+
+</beans>

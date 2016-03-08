@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>shop管理界面</title>
+    <link rel="stylesheet" type="text/css"       href="../css/ext-all.css" />
+    <script src="../js/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../js/ext-all.js"></script>
+    <script src="../js/common/ext-lang-zh_CN.js"></script>
+</head>
+<script type="text/javascript">
+    Ext.onReady(function () {
+
+        var accordion = new Ext.Panel({
+            title: "west",
+            layout: "accordion",  //设置为手风琴布局
+            layoutConfig: {
+                animate: true
+            },
+            width: 250,
+            minWidth: 90,
+            region: "west", //设置方位
+            split: true,
+            collapsible: true,
+/*            items: [
+                { title: "嵌套面板一", html: "嵌套面板一", iconCls: "save" },
+                { title: "嵌套面板二", html: "嵌套面板二", iconCls: "search" },
+                { title: "嵌套面板三", html: "嵌套面板三", iconCls: "back" },
+                { title: "嵌套面板四", html: "嵌套面板四", iconCls: "12" }
+            ]*/
+            items: [
+                new Ext.Panel({ title: '用户管理', items:[
+                        new Ext.BoxComponent({ autoEl: { tag: 'div', html: '用户管理'} }),
+                        new Ext.BoxComponent({ autoEl: { tag: 'div', html: '用户管理'} }),
+                        new Ext.BoxComponent({ autoEl: { tag: 'div', html: '用户管理'} })
+                ]
+                    //[new Ext.BoxComponent({ autoEl: { tag: 'div', html: '用户管理'} })]
+                }),
+                new Ext.Panel({ title: '角色管理', items: [new Ext.BoxComponent({ autoEl: { tag: 'div', html: '角色管理'} })] }),
+                new Ext.Panel({ title: '系统管理', items: [new Ext.BoxComponent({ autoEl: { tag: 'div', html: '系统管理'} })] })
+            ]
+/*            items: [
+                new Ext.Panel({ title: '用户管理', items: [ '用户管理'] }),
+                new Ext.Panel({ title: '角色管理', items: [ '角色管理'] }),
+                new Ext.Panel({ title: '系统管理', items: [ '系统管理'] })
+            ]*/
+
+        });
+
+        new Ext.Viewport({
+            title: "Viewport",
+            layout: "border", //这里是（border）边界布局
+            defaults: {
+                bodyStyle: "background-color: #FFFFFF;",
+                frame: true
+            },
+            items: [
+                accordion, //这里是（accordion）手风琴布局
+                {region: "east", width: 90, title: 'north', collapsible: true },
+                { region: "north", height: 100, title: 'north', collapsible: true },
+                { region: "center", split: true, border: true, collapsible: true, title: 'center' },
+                { region: "south", title: "south", split: true, border: true, collapsible: true, height: 100 }
+            ]
+/*            renderTo:'body'*/
+        });
+    });
+</script>
+<body>
+<!--<div id="AccordionLayout" style="width: 300px; float: left; height: 200px">
+
+</div>-->
+<!--   <div id="body"></div>-->
+</body>
+
+</html>

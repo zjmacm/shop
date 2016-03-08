@@ -1,0 +1,84 @@
+/* CSS Document */
+*{
+font-size:12px;
+width:100%;
+font-family:"ÐÂËÎÌå";
+line-height:25px;
+padding:0;
+margin:0;
+color:#666666;
+vertical-align:middle;
+}
+a{
+text-decoration:none;
+}
+#container{
+width:75.3859649%;
+
+}
+#promopt{
+width:75.3859649%;
+height:200px;
+border : 1px dashed #2D2D2D ;
+}
+#promopt p,#promopt a{
+width:100%;
+height:40px;
+padding:0 40px;
+font-size:18px;
+}
+#content{
+width:75.3859649%;
+height:350px;
+border : 1px dashed #2D2D2D ;
+}
+#relative{
+font-size:16px;
+margin:5px ;
+font-weight:800;
+}
+.button{
+height:25px;
+background-color:#FFAD00;
+/* Gecko browsers */
+-moz-border-radius: 5px; 
+/* Webkit browsers */
+-webkit-border-radius: 5px; 
+/* W3C syntax - likely to be standard so use for future proofing */
+border-radius:10px;
+text-align:center;
+font-size:12px;
+behavior: url(/shop/shop-web/src/main/webapp/WEB-INF/user_pc/plugins/PIE-2.0beta1/PIE.htc);
+vertical-align:middle;
+}
+.empty{
+height:10px;
+}
+.imgContainer{
+width:23%;
+height:130px;
+border : 1px inset #2D2D2D ;
+float:left;
+margin:0 6px;
+}
+.relaImg{
+width:100%;
+height:130px;
+}
+#promoptCenter{
+width:100%;
+height:130px;
+margin:40px 0;
+}
+.more{
+position:relative;
+left:615px;
+}
+.money{
+color:red;
+}
+#moreImg{
+width:15px;
+height:15px;
+margin-left:10px;
+}

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.page-select {
+	height: 20px;
+	color: #2D2D2D;
+}
+
+.page-select div {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+.page-select .block:hover {
+	color: #FFFFFF;
+	background-color: #F1A600;
+}
+
+.page-select a {
+	text-decoration: none;
+	color: #2D2D2D;
+}
+
+.page-select .block {
+	height: 23px;
+	border: 1px solid #757575;
+}
+
+.page-select .page-num {
+	margin-right: -5px;
+}
+
+.page-select .next-page {
+	margin-left: 5px;
+}
+
+.input-page, .total-page {
+	font-size: 70%;
+}
+
+.input-page input {
+	width: 20px;
+	height: 15px;
+	border-radius: 0;
+	border-width: 0;
+	border: 1px solid #757575;
+}
+
+.suspension, .page-jump-btn {
+	display: none;
+}

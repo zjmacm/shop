@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#imagearea2 .list-area {
+	display: inline-block;
+	height: 33%;
+	width: 49%;
+}
+
+#imagearea2 .list-area > div {
+	display: block;
+}
+
+#imagearea2 .list-area .l-row1 {
+	height: 14%;
+	margin: 10px 0 2px 0;
+}
+
+#imagearea2 .list-area .l-row2 {
+	height: 86%;
+}
+
+#imagearea2 .list-area .l-row1 span {
+	margin: 0 0 0 20px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+#imagearea2 .list-area .l-row1 a {
+	float: right;
+	margin: 0 20px 0 0;
+	font-size: 12px;
+	font-weight: 700;
+	color: #797878;
+}
+
+#imagearea2 .list-area .l-row2 > div {
+	display: inline-block;
+}
+
+

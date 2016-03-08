@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>shop管理界面</title>
+    <link rel="stylesheet" type="text/css"       href="../css/ext-all.css" />
+    <script src="../js/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../js/ext-all.js"></script>
+    <script src="../js/common/ext-lang-zh_CN.js"></script>
+</head>
+<script>
+    var nodes=[
+        {
+            text:"会员管理",
+            id:"VIP_admin",
+            leaf:false,
+            expanded:true,
+            children:[
+                {id:'VIP_search',text:'查看会员',link:"a.jsp",leaf:true},
+                {id:"VIP_logOff",text:"注销会员",leaf:true},
+                {id:"VIP_statusChange",text:"停用/启用",leaf:true}
+            ]
+        }, {
+            text:"日志管理",
+            id:"log_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"log_search",text:"查看日志",leaf:true},
+                {id:"log_delete",text:"删除日志",leaf:true},
+                {id:"log_classify",text:"分类归档日志",leaf:true},
+                {id:"log_config",text:"日志配置",leaf:true}
+            ]
+        },{
+            text:"评论管理",
+            id:"comment_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"comment_exam",text:"审核评论",leaf:true}
+            ]
+        },{
+            text:"商品管理",
+            id:"goods_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"goods_classify_add",text:"增加分类审核",leaf:true},
+                {id:"goods_classify_delete",text:"删除分类审核",leaf:true},
+                {id:"goods_add_exam",text:"增加商品审核",leaf:true}
+            ]
+        },{
+            text:"系统设置管理",
+            id:"sysSetting_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"sys_setting",text:"系统设置",leaf:true}
+            ]
+        },{
+            text:"订单管理",
+            id:"order_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"order_admin1",text:"订单管理",leaf:true}
+            ]
+        },{
+            text:"反馈建议",
+            id:"feedBack",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"email_message",text:"邮件消息",leaf:true},
+                {id:"board_message",text:"留言消息",leaf:true}
+            ]
+        },{
+            text:"文章管理",
+            id:"article_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"artitle_add",text:"增加文章",leaf:true},
+                {id:"artitle_delete",text:"删除文章",leaf:true},
+                {id:"artitle_update",text:"更新文章",leaf:true}
+            ]
+        },{
+            text:"支付管理",
+            id:"pay_admin",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"payMethod_add",text:"新增支付方式",leaf:true},
+                {id:"payMethod_delete",text:"删除支付方式",leaf:true},
+                {id:"payMethod_config",text:"配置支付方式",leaf:true}
+            ]
+        },{
+            text:"系统配置",
+            id:"sys_config",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"VIP_register",text:"会员注册",leaf:true},
+                {id:"pic_config",text:"图片配置",leaf:true},
+                {id:"filePath_config",text:"文件系统路径配置",leaf:true},
+                {id:"push_config",text:"推送配置",leaf:true}
+            ]
+        },{
+            text:"网站统计分析",
+            id:"webSys_analysis",
+            leaf:false,
+            expanded:false,
+            children:[
+                {id:"platform_access",text:"接入统计平台",leaf:true}
+            ]
+        }
+    ];
+    var treePanel=new Ext.tree.TreePanel({
+        id:"leftTree",
+        title:"管理员模块",
+        frame : true,//背景变成蓝色
+        border:false,
+        aotuScroll:true,
+        root:{
+            id:"root",
+            text:"管理员模块",
+            leaf:false,
+            expanded:true,
+            children:nodes
+        },
+        rootVisible:false
+    });
+/*方式一
+function load(node, e) {
+        if (node.leaf) {
+            //            e.stopEvent();
+            var newWin = new Ext.Window({
+                width: 745,
+                height: 529,
+                title: "现用技术标准",
+                html:"hello"// "<iframe src=/"Manage/VolunteerShipInfo.aspx/" marginheight=/"0/" marginwidth=/"0/" width=/"727/" height=/"500/"></iframe>"
+        });
+        newWin.show();
+    }
+    }
+    treePanel.addListener("click",load);*/
+    //方式二
+    //treePanel.addListener("click",loadNodeInfo);
+     function loadNodeInfo(node,e){
+         if (node.leaf){
+             var id=node.id;
+             if(!id){
+                 Ext.Msg.alert("提示信息","节点必须设置唯一id");
+                 return;
+             }
+             var comp=centerTab.getComponent(id);
+             if(!comp){
+                 comp=new Ext.Panel({
+                     id:id,
+                     title:node.text||"",
+                     /*                autoLoad: {
+                      url : 'grid.jsp?parentId=' + node.id,
+                      scripts : true
+                      callback: this.initSearch},*/
+                     listeners: {render:function(){//为每个Tab标签添加监听器.当标签渲染时触发
+                         //Ext.Msg.alert("Tab 1","渲染Tab 1成功") ;
+                         Ext.Ajax.request( {//该种方式还未实现
+                             url : 'a.html',
+                             method : 'get',
+                             /*                        params : {
+                              userName : document.getElementById('userName').value,
+                              password : document.getElementById('password').value
+                              },*/
+                             success : function(response, options) {
+                                 var o = Ext.util.JSON.decode(response.responseText);
+                                 Ext.Msg.alert(o) ;
+                             },
+                             failure : function() {
+                                 Ext.Msg.alert("提示","数据加载失败") ;
+                             }
+                         });
+                     }},
+                     html:node.text,//简单实现
+                     closable:true
+                 });
+                 centerTab.add(comp);
+             }
+             centerTab.setActiveTab(comp);
+             centerTab.scrollToTab(comp);
+         }
+
+    }
+
+    //方式三
+    function addTab(id,link,name){ //定义一个方法，是在节点单击的时候触发
+
+
+        //var tabTitle = name;
+        //var tabLink = link;
+        //currentPage = tabId;
+        //var centerTab = Ext.getCmp("centerTab");
+        var tab = centerTab.getComponent(id);
+        if(!tab){ //判断MainTabPanel中是否存在这个页面，如果不存在将创建一个
+            tab = centerTab.add(new Ext.Panel({
+                //renderTo:"divPanel",
+                id:id,
+                title:name,
+                width:300,
+                height:120,
+                bodyStyle:'padding:10',
+                layout:"form",
+                hideLabels:false,
+                frame:true,
+                closable:true,
+                //labelAlign:"right",
+                defaultType:"textfield",
+                items:[
+                    {fieldLabel:"姓名",name:"name"},
+                    {fieldLabel:"年龄",name:"age"}
+                ]
+            }));
+            centerTab.setActiveTab(tab); //将焦点指向我点击节点打开的页面
+        }else{ //如果已有TabPanel，那么就直接将节点指向这个页面
+            centerTab.setActiveTab(tab);
+        }
+    }
+    treePanel.addListener("click",function(node){  //当我点击某个节点的时候会触发这个事件
+        if (node.leaf){
+            addTab(node.id,node.link,node.text);
+        }
+    });
+
+    //方式四
+    //treePanel.addLister('')
+    function  four(self,record, item, index, e, options){
+        var tabs = Ext.getCmp('centerTab');
+        var tabItem = tabs.getComponent((record.get('id')));
+        if(tabItem == null)
+        {
+            tab = tabs.add(Ext.create(record.get('id'),
+                    {title:record.get('text'),
+                        closable:true,
+                        id:record.get('id')
+                    }
+            ));
+            tabs.setActiveTab(tab);
+        }else{
+            tabs.setActiveTab(tabItem);
+        }
+    };
+
+
+    var centerTab=new Ext.TabPanel({
+        id:"centerTab",
+        split: true,
+        border:true,
+        collapsible:true,
+        activeTab:0,
+        items:[{
+            title: '主页',
+            html: "<img src='2.jpg'>"
+
+    },{
+        title: 'Closable Tab',
+        html: "Hello world",
+        closable:true
+    }]
+    });
+
+    Ext.onReady(function () {
+
+        var westPanel = new Ext.Panel({
+            title: "west",
+            layout:"fit",
+            layoutConfig: {
+                animate: true
+            },
+            width: 250,
+            minWidth: 90,
+            region: "west", //设置方位
+            split: true,
+            collapsible: true,
+            items: [treePanel]
+
+        });
+
+        var eastPanel = new Ext.Panel({
+            title: "east",
+            layout:"fit",
+            layoutConfig: {
+                animate: true
+            },
+            width: 90,
+            minWidth: 90,
+            region: "east", //设置方位
+            split: true,
+            collapsible: true
+            //items: [treePanel]
+
+        });
+        var centerPanel = new Ext.Panel({
+            id:"centerPanel",
+            title: "center",
+            layout:"fit",
+            layoutConfig: {
+                animate: true
+            },
+            region: "center", //设置方位
+            split: true,
+            collapsible: true,
+
+            items: [centerTab]
+
+
+        });
+
+        var northPanel = new Ext.Panel({
+            title: "north",
+            frame : true,
+            layout:"hbox",
+/*            layoutConfig: {
+                animate: true
+            },*/
+            height: 100,
+            minHeight: 100,
+            region: "north", //设置方位
+            split: true,
+            collapsible: false,
+            layoutConfig: {
+                align:'middle'
+            },
+            defaults:{margins:'0 5 0 0'},
+            items:[{
+                xtype:'textfield',
+                width:350,
+                height:120,
+                //border:0,
+                style:'background-image:url(1.jpg);background-repeat: no-repeat;border:0;',
+                readOnly:true
+            },{
+                xtype:'spacer',
+                flex:1
+            },{
+                xtype:'label',
+                text: 'welcome yqf'
+            },{
+                xtype:'spacer',
+                flex:0.1
+            },{
+                xtype:'button',
+                text: '退出',
+                margins:'0'
+            }]
+
+        });
+        var southPanel = new Ext.Panel({
+            title: "south",
+            layout:"fit",
+            //frame:true,
+            layoutConfig: {
+                animate: true
+            },
+            height: 100,
+            minHeight: 100,
+            region: "south", //设置方位
+            split: true,
+            collapsible: false,
+            bbar : [ {
+                xtype : "label"
+            }, '->', 'Version 1.0', 'shop' ]
+            //items: [treePanel]
+
+        });
+        new Ext.Viewport({
+            title: "Viewport",
+            layout: "border", //这里是（border）边界布局
+            defaults: {
+                bodyStyle: "background-color: #FFFFFF;",
+                frame: true
+            },
+            items: [
+                eastPanel,//{region: "east", width: 90, title: 'east', collapsible: true },
+                northPanel,//{ region: "north", height: 100, title: 'north', collapsible: true },
+                southPanel,//{ region: "south", title: "south", split: true, border: true, collapsible: true, height: 100 },
+                westPanel,
+                centerPanel
+            ]
+        });
+    });
+
+</script>
+<body>
+
+</body>
+</html>

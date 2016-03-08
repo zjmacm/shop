@@ -1,0 +1,12 @@
+##商品详情页面
+<html>
+    <head>
+        <title>商品详情</title>
+    </head>
+    <body>
+    <p>$seller.sellerName</p>
+    <p>$seller.ownerName</p>
+    <p>$goods.name</p>
+    <p>$goods.price</p>
+    </body>
+</html>

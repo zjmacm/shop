@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:component-scan base-package="com.shop.email"/>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.host">smtp.gmail.com</prop>
+                <!--<prop key="mail.smtp.host">smtp.163.com</prop>-->
+
+               <prop key="mail.smtp.port">587</prop>
+               <!-- <prop key="mail.smtp.port">25</prop>-->
+            </props>
+        </property>
+        <!--公用测试邮箱-->
+        <property name="username" value="shop2product@gmail.com" />
+        <property name="password" value="shop123456" />
+
+    </bean>
+
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <value>
+                resource.loader=class
+                class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+            </value>
+        </property>
+    </bean>
+    <!--异步执行-->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+
+        <property name="corePoolSize" value="3"/>
+
+        <property name="maxPoolSize" value="20"/>
+
+    </bean>
+    <!-- 模板邮件 -->
+    <util:map id="templateMailContext">
+        <!-- 发送提醒邮件的模板 -->
+        <entry key="REMIND">
+            <bean class="com.shop.email.EmailTemplate">
+                <property name="from" value="shop2product@gmail.com" />
+                <property name="subject" value="您有新的提醒" />
+                <property name="htmlTemplate" value="emailtemplates/remind-html-template.html" />
+            </bean>
+        </entry>
+        <!-- 注册成功模板 -->
+        <entry key="REGISTER-SUCCESS">
+            <bean class="com.shop.email.EmailTemplate">
+                <property name="from" value="shop2product@gmail.com" />
+                <property name="subject" value="【注册成功】会员注册成功通知" />
+                <property name="htmlTemplate" value="emailtemplates/register-success.html" />
+            </bean>
+        </entry>
+        <!--忘记密码模板 -->
+        <entry key="RESET-USER-PASSWORD">
+            <bean class="com.shop.email.EmailTemplate">
+                <property name="from" value="shop2product@gmail.com" />
+                <property name="subject" value="【密码重置】会员密码重置通知" />
+                <property name="htmlTemplate" value="emailtemplates/resetPass-html-template.html" />
+            </bean>
+        </entry>
+    </util:map>
+</beans>

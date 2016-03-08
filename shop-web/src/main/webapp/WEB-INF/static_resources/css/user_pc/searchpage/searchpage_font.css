@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "仿宋";
+	src: url(../../../fonts/AdobeFangsongStd-Regular.otf);
+}
+
+.search-by-list a {
+	font-family: "仿宋";
+}

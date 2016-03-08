@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "尚雅";
+	src: url(../../../fonts/shangya.otf);
+}
+
+@font-face {
+	font-family: "宋体";
+	src: url(../../../fonts/AdobeSongStd-Light.otf);
+}
+
+#header .select-bar a, #left-bar a, .center-content p, #notice span {
+	font-family: "尚雅";
+}
+
+#header .search-below a, #footer {
+	font-family: "宋体";
+}

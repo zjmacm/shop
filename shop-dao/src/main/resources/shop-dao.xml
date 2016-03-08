@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    <!-- 扫描com.smart.dao包下所有标注@Repository的DAO组件 -->
+    <context:component-scan base-package="com.shop.dao"/>
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" >
+           <list>
+               <value>classpath:jdbc.properties</value>
+               <value>classpath:redis.properties</value>
+           </list>
+        </property>
+    </bean>
+    <!--定义数据源-->
+     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
+    <!--定义hibernate的session工厂-->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="packagesToScan">  <!--扫描基于Hibernated的JPA注解PO类目录-->
+            <list><value>com.shop.domain</value></list>
+        </property>
+
+        <!--指定hibernate的属性信息-->
+        <property name="hibernateProperties">
+            <props>
+                <!--指定数据库连接类型-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!--在数据库操作里显示SQL，方便开发调试，部署时该关闭false-->
+                <prop key="hibernate.show_sql">true</prop>
+                <!--此处选择EHCache作为二级缓存方案（还有Memcached）-->
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+                <prop key="hibernate.cache.use_second_level_cache">true</prop>
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="javax.persistence.validation.mode">none</prop>
+            </props>
+        </property>
+
+        <!--配置缓存策略-->
+        <!--省略配置，此处填写的是对domain下对象分别指定不同的缓存机制-->
+        <!--
+        <property name="entityCacheStrategies">
+            <props>
+                <prop key="...domain.com.shop.domain.User">
+                    nonstrict-read-write,fixedRegion   固定缓存，不变对象,当然User是常变化的
+                </prop>
+                <prop key="...domain...">
+                    nonstrict-read-write,freqChangedRegion 存取容易改变的对象到硬盘上
+                </prop>
+
+            </props>
+        </property>-->
+    </bean>
+    <!--定义hibernate模板-->
+    <bean id="hibernateTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate"
+          p:sessionFactory-ref="sessionFactory" />
+
+    <!-- JDBC模板 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- redis -->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="${redis.host}" p:port="${redis.port}" />
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>
+
+
+    <!-- redis模板 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory"   ref="connectionFactory" />
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+    </bean>
+
+
+    <bean id="simpleDaoJDBC" name="simpleDaoJDBC"
+          class="com.shop.dao.impl.MySQLSimpleDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+</beans>

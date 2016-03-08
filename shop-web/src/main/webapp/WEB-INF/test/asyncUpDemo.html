@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>upload</title>
+    <script type="text/javascript" src="/test/jquery.js"></script>
+    <script type="text/javascript" src="/test/ajaxfileupload.js"></script>
+</head>
+
+<body>
+    <input id="shopId" name="id" value="id"/>
+    <input id="upload" name="file"  type="file" value="upload"/>
+    <input name="submit" type="submit" value="upload" onclick="asyncUpload()"/>
+</body>
+<script type="text/javascript">
+    function asyncUpload(){
+        var id = $('#shopId').val();
+        $.ajaxFileUpload({
+           url:'/imageUp',
+            secureuri:false,
+            fileElementId:'upload',
+            data:{shopId:id},//在此处增加字段需要在action对象中增加对应属性
+            dataType: 'json',
+            beforeSend:function()
+            {
+                alert("before");
+            },
+            complete:function()
+            {
+                alert("complete");
+            },
+            success: function (data, status)
+            {
+                if(typeof(data.error) != 'undefined')
+                {
+                    if(data.error != '')
+                    {
+                        alert(data.error);
+                    }else
+                    {
+                        alert(data.msg);
+                    }
+                }
+                alert(data.val());
+            },
+            error: function (data, status, e)
+            {
+                alert(e);
+            }
+        });
+    }
+
+</script>
+</html>

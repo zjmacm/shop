@@ -1,0 +1,115 @@
+/* CSS Document */
+*{
+font-size:14px;
+float:left;
+width:100%;
+font-family:"ÐÂËÎÌå";
+line-height:25px;
+padding:0;
+margin:0;
+color:#666666;
+vertical-align:middle;
+}
+.colR{
+width:50%;
+float:right;
+
+}
+.colL{
+width:50%;
+float:left;
+
+}
+.fl{
+float:left;
+}
+.fr{
+float:right;
+}
+#container{
+width:75.3859649%;
+}
+#content{
+width:75.3859649%;
+border : 1px inset #2D2D2D ;
+}
+.infor{
+   color:red;
+}
+.title{
+}
+.row{
+}
+#header{
+height:40px;
+color:#FFFFFF;
+line-height:40px;
+background-color:#FFAD00;
+font-size:16px;
+font-weight:800;
+}
+#header p{
+color:#FFFFFF;
+}
+.hr{
+background:#2D2D2D;
+height:1px;
+float:left;
+}
+.bigPadding{
+font-size:16px;
+height:40px;
+line-height:40px;
+font-weight:800;
+padding: 0px 18px;
+}
+.smallPadding{
+font-size:14px;
+font-weight:400;
+padding:0px 40px ;
+
+}
+.input{
+   width:150px;
+   float:none;
+   height:16px;
+}
+.textArea{
+   width:250px;
+   height:50px;
+   float:none;
+   vertical-align:top;
+}
+.empty{
+height:10px;
+}
+.smallEmpty{
+height:5px;
+}
+#ifV{
+width:20px;
+height:20px;
+float:none;
+}
+.button{
+height:25px;
+background-color:#FFAD00;
+/* Gecko browsers */
+-moz-border-radius: 5px; 
+/* Webkit browsers */
+-webkit-border-radius: 5px; 
+/* W3C syntax - likely to be standard so use for future proofing */
+border-radius:10px;
+text-align:center;
+font-size:12px;
+behavior: url(/shop/shop-web/src/main/webapp/WEB-INF/user_pc/plugins/PIE-2.0beta1/PIE.htc);
+vertical-align:middle;
+}
+#finish{
+width:100px;
+float:right;
+}
+#saveUser{
+width:100px;
+float:none;
+}

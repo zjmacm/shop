@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html, body {
+	width: 100%;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+}
+
+.container > div {
+	display: block;
+	position: relative;
+}
+
+
+

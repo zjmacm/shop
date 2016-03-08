@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+}
+
+/*For all-select*/
+
+.all-select {
+	position: relative;
+	width: 710px;
+	height: 50px;
+	margin-bottom: -15px;
+	background-color: #E4E4E4;
+}
+
+.all-select > div {
+	position: absolute;
+	vertical-align: text-top;
+	display: inline-block;
+	height: 100%;
+	line-height: 50px;
+	color: #313131;
+}
+
+.all-select .a-s-c1 {
+	left: 0;
+	width: 100px;
+}
+
+.all-select .a-s-c2 {
+	left: 57px;
+	width: 220px;
+}
+
+.all-select .a-s-c2 input {
+	border: none;
+	background-color: #E4E4E4;
+}
+
+.all-select .a-s-c3 {
+	right: 80px;
+	/*width: 240px;*/
+	white-space: nowrap;
+}
+
+.a-s-c3 span {
+	margin-right: 5px;
+}
+
+.a-s-item-num,.a-s-sum-price {
+	font-size: 25px;
+	color: #FF0C1C;
+}
+
+.all-select .a-s-c4 {
+	right: 0;
+	width: 80px;
+}
+
+.all-select .a-s-c4 input {
+	border-radius: 0;
+	border: none;
+	height: 100%;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 18px;
+	background-color: #FFAD00;
+}
+
+.all-select .a-s-c4 input:hover {
+	background-color: #FF8C00;
+}
+
+/*For shopper-select*/
+
+.shopper-select {
+	margin: 30px 0 17px 0;
+}
+
+.shopper-select .s-s-m-t {
+	font-weight: bold;
+}
+
+/*This part is for table*/
+
+.one-item {
+	margin-bottom: -1px;
+}
+
+table {
+	height: 100px;
+	width: 710px;
+	border: 1px solid #8F8F8F;
+	border-collapse:collapse;
+	font-size: 11px;
+	color: #313131;
+}
+
+table td {
+	padding: 8px;
+}
+
+.o-i-row td {
+	border-left: 1px solid #F5F5F5;
+}
+
+.o-i-row .o-i-c1 {
+	border: none;
+	width: 300px;
+}
+
+.o-i-c1 > div {
+	display: inline-block;
+}
+
+.o-i-c1 .select-one-item {
+	position: relative;
+	bottom: 22px;
+}
+
+.o-i-c1 .o-i-c1-info {
+	position: relative;
+	width: 200px;
+	left: 8px;
+	bottom: 30px;
+}
+
+.o-i-c1 img {
+	height: 60px;
+	width: 60px;
+}
+
+.o-i-c3 {
+	width: 54px;
+}
+
+.o-i-c3 .num-selecter {
+	margin: 0;
+	vertical-align: text-top;
+}
+
+.o-i-c3 .num-selecter > div {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	vertical-align: top;
+}
+
+.o-i-c3 input {
+	width: 20px;
+	height: 17px;
+	font-size: 10px;
+	margin: 0 -4px;
+	border: 1px solid #929292;
+}
+
+.o-i-c3 .o-i-c3-button {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	border: 1px solid #B6B6B6;
+	background-color: #DBDBDB;
+}
+
+.o-i-c4 {
+	color: #FF0C1C;
+	font-size: 20px;
+	text-align: center;
+}
+
+.o-i-c5 {
+	width: 100px;
+}
+
+.o-i-c5 input {
+	border: none;
+	background-color: #FFFFFF;
+	color: #313131;
+}
+
+.one-item .o-i-c5 .buy-one {
+	margin-left: 10px;
+	background-color: #FFAD00;
+	color: #FFFFFF;
+}
+
+.one-item .o-i-c5 .buy-one:hover {
+	background-color: #FF8C00;
+}
+/*This part is for the position of the '.page-select'*/
+
+.content {
+	position: relative;
+	height: 100%;
+}
+
+.page-select {
+	position: absolute;
+	bottom: 10px;
+	left: 200px;
+}
+

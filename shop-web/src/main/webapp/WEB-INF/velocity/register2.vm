@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sea-register</title>
+</head>
+<body>
+<!--<p><div id="calculate" style="color:red; position:relative;display:block; " >显示</div></p>
+--><p><div id="register" style="color:red; position:relative; display:block;" >注册</div></p>
+<div id="bg">
+    <img id='closeBg' src='/images/register/20080528160825246.png'  />
+</div>
+<div id="coverBox">
+
+
+    <div id="body">
+        <div id="bodyHead" >
+            <!--	<img src="../images/register/注册修改版.png"   style="position:absolute; clip:rect(0px,360px,150px,0px);"  />	-->
+        </div>
+        <div id="bodyBottom">
+            <form id="registerForm" action="/seller/register/register">
+                <div class="emptyInput"></div>
+                <input type="text" value="昵称"  id="name"class="inputBox" />
+                <div class="emptyInput"></div>
+                <input type="text" value="邮箱" class="inputBox" />
+                <div class="emptyInput"></div>
+                <input type="text" value="密码" class="inputBox" />
+                <div class="emptyInput"></div>
+                <input type="text" value="确认密码" class="inputBox" />
+                <div class="emptyButton"></div>
+                <input type="button" value="注册" class="clickBox" />
+                <p><a class="clickButton" href="#">登录</a></p>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+<script src="../js/tool/sea.js"></script>
+<script>
+    seajs.config({
+        base: "../",
+        alias: {
+            "jquery": "js/tool/jquery-1.11.1.min.js"
+        }
+    });
+
+    seajs.use("../js/register/main");
+</script>
+</body>
+</html>

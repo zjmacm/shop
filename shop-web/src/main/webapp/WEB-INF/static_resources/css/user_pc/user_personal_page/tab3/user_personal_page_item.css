@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.item {
+	float: left;
+	height: 195px;/*width:height=4:5*/
+	width: 156px;
+	margin: 12px 7px;
+}
+
+.item .i-row1 {
+	bottom: 6px;
+}
+
+.item[role="area1-item"] .i-row1 .i-name {
+	font-size: 100%;
+	color: #797878;
+}
+
+.item[role="area1-item"] .i-row1 .i-price .i-c {
+	font-size: 100%;
+}
+
+.item[role="area1-item"] .i-row1 .i-price .i-num {
+	font-size: 120%;
+	font-weight: 600;
+}
+
+.item[role="area1-item"] .i-row2 {
+	font-size: 70%;
+	color: #797878;
+}
+
+.item[role="area1-item"] .hide-row {
+	font-size: 80%;
+}
+
+
+
+

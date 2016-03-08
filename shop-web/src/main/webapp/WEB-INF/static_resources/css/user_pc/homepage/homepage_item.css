@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+.item[role="area1-item"] {
+	height: 281.25px;/*width:height=4:5*/
+	width: 225px;
+	margin: 25px 15px 0 0;
+}
+
+.item[role="area2-item"] {
+	height: 187.5px;
+	width: 150px;
+	margin: 0 13px;
+}
+
+.item[role="area2-item"] .i-row1 {
+	bottom: 6px;
+}
+
+.item[role="area1-item"] .i-row1 .i-name {
+	font-size: 100%;
+	color: #797878;
+}
+
+.item[role="area1-item"] .i-row1 .i-price .i-c {
+	font-size: 100%;
+}
+
+.item[role="area1-item"] .i-row1 .i-price .i-num {
+	font-size: 120%;
+	font-weight: 600;
+}
+
+.item[role="area1-item"] .i-row2 {
+	font-size: 70%;
+	color: #797878;
+}
+
+.item[role="area2-item"] .i-row1 .i-name {
+	font-size: 80%;
+	color: #797878;
+}
+
+.item[role="area2-item"] .i-row1 .i-price .i-c {
+	font-size: 80%;
+}
+
+.item[role="area2-item"] .i-row1 .i-price .i-num {
+	font-size: 90%;
+	font-weight: 600;
+}
+
+.item[role="area2-item"] .i-row2 {
+	bottom: 3px;
+	font-size: 50%;
+	color: #797878;
+}
+
+.item[role="area2-item"] .hide-row {
+	font-size: 80%;
+}
+

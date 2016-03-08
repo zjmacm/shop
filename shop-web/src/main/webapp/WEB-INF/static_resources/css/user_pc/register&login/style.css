@@ -1,0 +1,244 @@
+body{
+    font-family:"新宋体";
+    font-size:16px;
+}
+table{
+    font-size:13px;
+}
+a{
+    text-decoration: none;
+
+}
+img{
+    width:auto;
+    height:auto;
+}
+td{
+    text-align: center;
+}
+.clipImg{
+    width:auto;
+    height:auto;
+    position:absolute;
+    left:-124px;
+    top:-64px;
+    clip:rect(auto auto 196px auto);
+}
+#body{
+    width:360px;
+    height:480px;
+    background-color:#2D2D2D;
+
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    margin:0 auto;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    position:relative;
+    z-index:10;
+}
+#bodyHead{
+    width:360px;
+    height:140px;
+    background-color:#FFAD00;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    position:relative;
+
+    z-index:10;
+}
+#bodyBottom{
+    background-color:#2D2D2D;
+
+    width:360px;
+    height:340px;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    position:relative;
+    z-index:10;
+}
+.emptyInput{
+    height:16px;
+    font-size:12px;
+}
+.emptyButton{
+    height:24px;
+}
+#registerForm{
+    width:265px;
+    margin:0 auto;
+    text-align:center;
+}
+.inputBox{
+    width:265px;
+    height:38px;
+    margin:0 auto;
+    padding:0 0px;
+    border:0;
+    color:#AAAAAA;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    text-align:center;
+    font-size:16px;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    /*position:relative;
+    */z-index:10;
+    vertical-align:middle;
+    /*  make placeholder can not be use
+    *margin-top:38px;*/
+    *line-height:38px;
+    autocomplete:off;
+}
+.validateBox{
+    width:265px;
+    height:26px;
+    margin:0 auto;
+    padding:0 0px;
+    border:0;
+    color:#AAAAAA;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    text-align:center;
+    font-size:16px;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    /*position:relative;
+    */z-index:10;
+    vertical-align:middle;
+    /*  make placeholder can not be use
+    *margin-top:38px;*/
+    *line-height:38px;
+    autocomplete:off;
+}
+.validateBox{
+    font-size:14px;
+}
+.clickBox{
+    width:148px;
+    height:42px;
+    background-color:#FFAD00;
+    margin:0 auto;
+    padding:0;
+    border:0;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    color:#FFFFFF;
+    font-size:26px;
+    font-weight:bold;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    /*position:relative;
+    */z-index:10;
+    vertical-align:middle;
+}
+.clickBox:hover{
+    cursor:pointer;
+}
+.clickButton{
+    color:#FFAD00;
+    font-size:13px;
+    height:25px;
+    margin:0 auto;
+}
+.clickButton:hover{
+    color:#FFAD00;
+    font-size:13px;
+}
+.clickButton:visited{
+    color:#FFAD00;
+    font-size:13px;
+}
+#bg{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#000;
+    z-index:2;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+}
+#coverBox{
+    display:none;
+    width:360px;
+    height:480px;
+    position:fixed;
+    background:#fff;
+    /* Gecko browsers */
+    -moz-border-radius: 5px;
+    /* Webkit browsers */
+    -webkit-border-radius: 5px;
+    /* W3C syntax - likely to be standard so use for future proofing */
+    border-radius:10px;
+    behavior: url("../../../plugins/PIE-2.0beta1/PIE.htc");
+    position:relative;
+
+
+    z-index:10;
+}
+.state1{
+    color:#FFFFFF;
+}
+.state2{
+    color:#FFFFFF;
+}
+.state3{
+    color:red;
+}
+.state4{
+    color:green;
+}
+.emptyInputLogin{
+    height:24px;
+}
+#validate{
+    width:100%;
+    height:20px;
+}
+.emptyInputSmall{
+    height:5px;
+}
+#remeber{
+    width:10%;
+    height:20px;
+    vertical-align:top;
+}
+.tableValidate{
+    width:33.3%;
+}
+.tablePassword{
+    width:33.3%;
+}
+.validateBoxA{
+    font-size:13px;
+    vertical-align:top;
+}
+.fr{
+    float:right;
+}
+.vali{
+    color:#FFFFFF;
+}

@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "data": {
+        "mobile": "18840838495",
+        "email": "ldz2012yn@gmail.com",
+        "message": "I am donahue"
+    }
+}
+//这是失败返回的json格式
+/*
+{
+"success": false,
+"errorMessage": "not found"
+}*/

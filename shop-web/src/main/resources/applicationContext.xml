@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.shop.controller"/>
+    <!--<import resource="shop-dao.xml"/>
+    <import resource="shop-service.xml"/>
+    <import resource="email.xml"/>-->
+    <!--<import resource="classpath:*.xml"/>这个配置先阶段是不对的，有重复-->
+    <bean class="org.apache.struts2.views.velocity.VelocityManager" name="default" />
+</beans>

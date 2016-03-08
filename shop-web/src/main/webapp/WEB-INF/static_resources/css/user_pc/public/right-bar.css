@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.content .right-aside {
+	float: right;
+	width: 180px;
+	height: 100%;
+	background-color: #F6F6F6;
+}
+
+#tdcode {
+	margin: 55px 20px 0 20px;
+	width: 140px;
+	height: 140px;
+	border: solid #2D2D2D 1px;
+	background-color: #F6F6F6;
+} 
+
+#tdcode img {
+	margin: 12px;
+	height: 120px;
+	width: 120px;
+}
+
+#notice {
+	margin: 20px 20px 0 20px;
+	width: 140px;
+	height: 450px;
+	border: solid #2D2D2D 1px;
+	background-color: #FBF1D5;
+}
+
+#notice span {
+	display: block;
+	margin: 10px 15px;
+	font-size: 23px;
+	font-weight: 500;
+}
+
+#notice .notice-text {
+	display: block;
+	margin: 10px 15px;
+}

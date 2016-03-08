@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.shop</groupId>
+    <artifactId>shop</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>shop-dao</module>
+        <module>shop-service</module>
+        <module>shop-web</module>
+        <module>shop-common</module>
+        <module>shop-listener</module>
+        <module>shop-handler</module>
+        <module>shop-manager</module>
+        <module>shop-domain</module>
+    </modules>
+    <!--我们到时候再具体决定下用那个版本的这只是简单列举些,这个配置是所有子项目的版本配置-->
+    <!--每个模块直接应用就好的-->
+    <properties>
+        <file.encoding>UTF-8</file.encoding>
+        <java.version>1.8</java.version>
+        <spring.action.version>3.1-SNAPSHOT</spring.action.version>
+        <org.springframework.version>4.0.0.RELEASE</org.springframework.version>
+        <spring.security.version>3.2.3.RELEASE</spring.security.version>
+
+
+        <lucene.version>4.6.0</lucene.version>
+        <mysql.version>5.1.6</mysql.version>
+        <commons-dbcp.version>1.2.2</commons-dbcp.version>
+        <aspectjweaver.version>1.6.9</aspectjweaver.version>
+        <apache.commons.version>1.1.1</apache.commons.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <javassist.version>3.9.0.GA</javassist.version>
+        <commons-beanutils.version>1.8.3</commons-beanutils.version>
+        <ehcache.version>1.6.2</ehcache.version>
+        <hibernate.version>3.6.10.Final</hibernate.version>
+        <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+        <org.apache.struts.version>2.3.16.3</org.apache.struts.version>
+        <hamcrest.core.version>1.3</hamcrest.core.version>
+        <mockito.core.version>1.9.5</mockito.core.version>
+        <commons-fileupload.version>1.2.1</commons-fileupload.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <servlet-api.version>2.3</servlet-api.version>
+        <jstl.version>1.2</jstl.version>
+        <standard.version>1.1.2</standard.version>
+        <freemarker.version>2.3.8</freemarker.version>
+        <jetty.version>6.1.5</jetty.version>
+        <com.springsource.org.apache.commons.lang.version>2.4.0</com.springsource.org.apache.commons.lang.version>
+        <mockito-all.version>1.8.5</mockito-all.version>
+        <junit.version>4.11</junit.version>
+        <testng.version>6.3.1</testng.version>
+        <unitils.version>3.2</unitils.version>
+        <dbunit.version>2.4.8</dbunit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <dom4j.version>1.6</dom4j.version>
+        <fastjson.version>1.1.41</fastjson.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <jackson-mapper-asl.version>1.6.0</jackson-mapper-asl.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javax.mail.version>1.4</javax.mail.version>
+        <velocity.version>1.7</velocity.version>
+        <jcaptcha-all.version>1.0-RC-2.0.1</jcaptcha-all.version>
+        <ibatis-core.version>3.0</ibatis-core.version>
+    </properties>
+
+    <!-- 作为父模块为其他项目所共用的依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+
+
+
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.7</source>
+                            <target>1.7</target>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.item {
+	float: left;
+	display: inline-block;
+	vertical-align: text-top;
+	background-color: #FFFFFF;
+}
+
+/*.item[role="area1-item"] {
+	height: 281.25px;/*width:height=4:5*/
+/*	width: 225px;
+	margin: 25px 15px 0 0;
+}*/
+
+/*.item[role="area2-item"] {
+	height: 187.5px;
+	width: 150px;
+	margin: 0 13px;
+}*/
+
+.item .i-row0,.i-row1,.i-row2 {
+	position: relative;
+	width: 100%;
+}
+
+.item .i-row0 {
+	height: 78.22%;/*width:height=45:44*/
+	width: 100%;
+}
+
+.item .i-row0 img {
+	height: 100%;
+	width: 100%;
+}
+
+.item .i-row0 .school {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	height: 25px;
+	width: 90px;
+	background-color: #FFAD00;
+	opacity: 0.8;
+}
+
+.item .i-row0 .school img {
+	width: 20px;
+	height: 25px;
+}
+
+.item .i-row0 .school div {
+	position: relative;
+	bottom: 6px;
+	display: inline-block;
+	vertical-align: text-top;
+	font-size: 90%;
+	color: #FFFFFF;
+}
+
+.item .i-row0 .hide-row {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	height: 25%;
+	width: 100%;
+	background-color: #FFFFFF;
+	opacity: 0.8;
+} 
+
+.item .i-row0 .hide-row div {
+	display: block;
+	margin: 2%;
+}
+
+.item .i-row1 {
+	margin: 7px 0 0 0;
+	height: 12%;
+}
+
+/*.item[role="area2-item"] .i-row1 {
+	bottom: 6px;
+}*/
+
+.item .i-row2 {
+	height: 9%;
+}
+
+/*.item[role="area1-item"] .i-row1 .i-name {
+	font-size: 100%;
+	color: #797878;
+}*/
+
+.item .i-row1 .i-price {
+	float: right;
+	color: #FF0000;
+}
+
+/*.item[role="area1-item"] .i-row1 .i-price .i-c {
+	font-size: 100%;
+}
+
+.item[role="area1-item"] .i-row1 .i-price .i-num {
+	font-size: 120%;
+	font-weight: 600;
+}
+
+.item[role="area1-item"] .i-row2 {
+	font-size: 70%;
+	color: #797878;
+}*/
+
+.item .i-id {
+	float: right;
+}
+
+/*.item[role="area2-item"] .i-row1 .i-name {
+	font-size: 80%;
+	color: #797878;
+}
+
+.item[role="area2-item"] .i-row1 .i-price .i-c {
+	font-size: 80%;
+}
+
+.item[role="area2-item"] .i-row1 .i-price .i-num {
+	font-size: 90%;
+	font-weight: 600;
+}
+
+.item[role="area2-item"] .i-row2 {
+	bottom: 3px;
+	font-size: 50%;
+	color: #797878;
+}
+
+.item[role="area2-item"] .hide-row {
+	font-size: 80%;
+}*/
+

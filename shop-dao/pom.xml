@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>shop</artifactId>
+        <groupId>com.shop</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>shop-dao</artifactId>
+    <packaging>jar</packaging>
+    <repositories>
+        <repository>
+            <id>nexus-osc-third</id>
+            <name>Nexus osc</name>
+            <layout>default</layout>
+            <url>http://maven.oschina.net/content/repositories/thirdparty/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+
+        <!-- 依赖的持久化类库-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!--从父模块依赖的Spring模块类库 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- 在本模块的依赖 -->
+
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- 中文分词器 -->
+        <dependency>
+            <groupId>org.wltea</groupId>
+            <artifactId>ik-analyzer</artifactId>
+            <version>4.9</version>
+        </dependency>
+
+        <!-- lucene -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+        <!--ibatis-->
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-core</artifactId>
+            <version>${ibatis-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+            <version>2.3.4.726</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+
+
+        <!--依赖的公共类库-->
+        <dependency>
+            <groupId>com.shop</groupId>
+            <artifactId>shop-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--测试模块之间依赖domain-->
+        <dependency>
+            <groupId>com.shop</groupId>
+            <artifactId>shop-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,11 @@
+{
+    "success": true,
+    "data":
+    { id: 1, buyername: '一',itemname:'fin',note:'hello',reply: '0',number:'2', data: '2001/01/01' }
+}
+//这是失败返回的json格式
+/*
+{
+"success": false,
+"errorMessage": "not found"
+}*/

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sea-register</title>
+</head>
+<body>
+<!--<p><div id="calculate" style="color:red; position:relative;display:block; " >显示</div></p>
+--><p><div id="register" style="color:red; position:relative; display:block;" >登录</div></p>
+<div id="bg">
+    <img id='closeBg' src='../images/register/20080528160825246.png' width="40px" height="40px" />
+    <style >
+        .emptyInput{
+            height:24px;
+        }
+        table{
+            font-size:13px;
+        }
+    </style>
+</div>
+<div id="coverBox">
+
+
+    <div id="body">
+        <div id="bodyHead" >
+            <img src="../images/register/register.png" width="auto" height="auto"  style="position:absolute;left:-124px;top:-64px; clip:rect(auto auto 196px auto);"   />
+        </div>
+        <div id="bodyBottom">
+            <form id="registerForm" >
+                <div class="emptyInput"></div>
+                <div class="emptyInput"></div>
+                <input id="username " name="username"  class="inputBox required" type="text" placeholder="邮箱" autocomplete=off  />
+                <div class="emptyInput state1"></div>
+                <input id="password" name="password" class="inputBox required" type="password " placeholder="密码" autocomplete=off  onblur="dataHanding(password)
+"/>
+                <div class="emptyInput state1"></div>
+                <table class="inputBox">
+                    <tr>
+                        <td style="width:30%; color:#FFFFFF;">
+                            验证码
+                        </td>
+                        <td style="width:40%;">
+                            <input id="validate" type="text" style="width:100%; height:20px;" value=""  />
+                        </td>
+                        <td style="width:30%;">
+                            <img src="###" />
+			 </td>
+		</table>
+				<div class="emptyInput state1" style="height:5px;"></div>
+        <table class="inputBox" style="font-size:13px;">
+            <tr>
+                <td style="width:50%; color:#FFFFFF;">
+                    <input id="remember" type="checkbox" style="width:10%; height:20px; vertical-align:middle " />
+                    <a>记住密码</a>
+                </td>
+                <td style="width:50%; ">
+                    <a style="float:right">忘记密码</a>
+                </td>
+        </table>
+        <input type="button" value="登录" class="clickBox" />
+        <p><a class="clickButton" href="#">注册</a></p>
+        </form>
+    </div>
+</div>
+
+
+
+</div>
+<script src="../js/tool/sea.js"></script>
+<script>
+    seajs.config({
+        base: "../",
+        alias: {
+            "jquery": "js/tool/jquery-1.11.0.js"
+        }
+    });
+
+    seajs.use("../js/register/main");
+</script>
+</body>
+</html>
